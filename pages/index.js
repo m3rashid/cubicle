@@ -1,0 +1,39 @@
+import { FeaturedPosts } from '../sections/index';
+import { PostCard, Categories, PostWidget } from '../components';
+import { getPosts } from '../services';
+import Head from 'next/head';
+
+export default function Home({ posts }) {
+  return (
+    <div className="container mx-auto px-3 sm:px-6 lg:px-12 mb-8">
+      <FeaturedPosts />
+      <Head>
+        <title>Home | Cubicle</title>
+        <meta name="description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
+        <meta name="keywords" content="programming, coding, life, web development, coder, programmer, new skills, latest, technology, computer, science, nerdy, nerd" />
+      </Head>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="lg:col-span-8 col-span-1">
+          {posts.map((post, index) => (
+            <PostCard key={index} post={post.node} />
+          ))}
+        </div>
+        <div className="lg:col-span-4 col-span-1">
+          <div className="lg:sticky relative top-8">
+            <PostWidget />
+            <Categories />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Fetch data at build time
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+  return {
+    props: { posts },
+  };
+}
+
