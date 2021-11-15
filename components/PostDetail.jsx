@@ -55,7 +55,7 @@ const PostDetail = ({ post }) => {
       case "block-quote":
         const leftQuote = <div className="inline-block mr-2"><Image src="/left-quote.png" height="30px" width="30px" alt="left-quote" /></div>
         return <div key={`quote-${index}`} className="mb-6 pl-3 pr-3 text-justify border border-red-500 rounded-md lg:rounded-lg py-3">
-          {modifiedText.map((item, i) => <React.Fragment key={i}>{leftQuote}{item}</React.Fragment>)}
+          {leftQuote}{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}
         </div>
 
       case 'image':
