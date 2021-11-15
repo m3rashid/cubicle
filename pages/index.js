@@ -11,6 +11,13 @@ export default function Home({ posts }) {
         <title>Home | Cubicle</title>
         <meta name="description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
         <meta name="keywords" content="programming, coding, life, web development, coder, programmer, new skills, latest, technology, computer, science, nerdy, nerd" />
+
+        <meta name="og:title" content="Home | Cubicle" />
+        <meta name="og:url" content="https://cubicle.vercel.app/" />
+        <meta name="og:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
+
+        <meta name="twitter:title" content="Home | Cubicle" />
+        <meta name="twitter:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-8 col-span-1">

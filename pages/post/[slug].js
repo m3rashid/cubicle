@@ -13,14 +13,20 @@ const PostDetails = ({ post }) => {
   }
 
   const keywords = post.excerpt.split(' ');
-
+  const result = keywords.filter(word => word.length > 3);
   return (
     <>
       <div className="container mx-auto px-3 sm:px-6 lg:px-12 mb-8">
         <Head>
           <title>{post.title} | Cubicle</title>
           <meta name="description" content={post.excerpt} />
-          <meta name="keywords" content={keywords.join(', ')} />
+          <meta name="keywords" content={result.join(', ')} />
+
+          <meta name="og:title" content={post.title + ' | Cubicle'} />
+          <meta name="og:description" content={post.excerpt} />
+          <meta name="og:url" content={"https://cubicle.vercel.app/post/" + post.slug} />
+          <meta name="twitter:title" content={post.title + ' | Cubicle'} />
+          <meta name="twitter:description" content={post.excerpt} />
         </Head>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="col-span-1 lg:col-span-8">

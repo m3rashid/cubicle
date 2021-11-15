@@ -17,6 +17,13 @@ const CategoryPost = ({ posts }) => {
         <title>{router.query.slug} Category | Cubicle</title>
         <meta name="description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
         <meta name="keywords" content="programming, coding, life, web development, coder, programmer, new skills, latest, technology, computer, science, nerdy, nerd" />
+
+        <meta name="og:title" content={router.query.slug + ' Category | Cubicle'} />
+        <meta name="og:url" content={"https://cubicle.vercel.app/category/" + router.query.slug} />
+        <meta name="og:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
+
+        <meta name="twitter:title" content={router.query.slug + ' Category | Cubicle'} />
+        <meta name="twitter:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="col-span-1 lg:col-span-8">
