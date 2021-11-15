@@ -43,14 +43,14 @@ const CommentsForm = ({ slug }) => {
   }
 
   return (
-    <div className="bg-gray-700 shadow-lg rounded-md p-3 sm:p-6 lg:p-8 mb-8">
+    <div className="bg-gray-700 shadow-lg rounded-md lg:rounded-lg p-3 sm:p-6 lg:p-8 mb-8">
       <h3 className="text-2xl mb-8 font-semibold border-b border-red-500 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">Leave a Reply</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
-        <textarea ref={commentEl} className="p-4 outline-none w-full rounded-md h-40 focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Comment" name="comment" />
+        <textarea ref={commentEl} className="p-4 outline-none w-full rounded-md lg:rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Comment" name="comment" />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-        <input type="text" ref={nameEl} className="py-2 px-4 outline-none w-full rounded-md focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Name" name="name" />
-        <input type="text" ref={emailEl} className="py-2 px-4 outline-none w-full rounded-md focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Email" name="email" />
+        <input type="text" ref={nameEl} className="py-2 px-4 outline-none w-full rounded-md lg:rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Name" name="name" />
+        <input type="text" ref={emailEl} className="py-2 px-4 outline-none w-full rounded-md lg:rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" placeholder="Email" name="email" />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <div>

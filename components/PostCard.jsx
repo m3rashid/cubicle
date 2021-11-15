@@ -3,9 +3,9 @@ import Link from 'next/link';
 import PostMeta from './PostMeta';
 
 const PostCard = ({ post }) => (
-  <div className="bg-gray-700 shadow-lg rounded-md p-0 mb-8">
+  <div className="bg-gray-700 shadow-lg rounded-md lg:rounded-lg p-0 mb-8">
     <div className="relative overflow-hidden pb-80 mb-6">
-      <img src={post.featuredImage.url} alt="" className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-md" />
+      <img src={post.featuredImage.url} alt="" className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg" />
     </div>
     <h1 className="text-center mb-6 px-2 lg:px-4 cursor-pointer text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
       <Link href={`/post/${post.slug}`}>{post.title}</Link>

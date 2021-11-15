@@ -1,7 +1,9 @@
 import React from 'react';
+import Image from 'next/image'
 import PostMeta from './PostMeta';
 
 const PostDetail = ({ post }) => {
+
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
@@ -9,7 +11,7 @@ const PostDetail = ({ post }) => {
       if (obj.bold) { modifiedText = (<b key={index}>{text}</b>) }
       if (obj.italic) { modifiedText = (<em key={index}>{text}</em>) }
       if (obj.underline) { modifiedText = (<u key={index}>{text}</u>) }
-      if (obj.code) { modifiedText = (<code className="bg-gray-900 px-3 py-0.5 rounded-md" key={index}>{text}</code>) }
+      if (obj.code) { modifiedText = (<code className="bg-gray-900 px-3 py-0.5 rounded-md lg:rounded-lg" key={index}>{text}</code>) }
       if (obj.type === 'link') { modifiedText = (<a className="text-red-500" target="_blank" rel="noopener noreferrer" href={obj.href} key={index}>{obj.children[0].text}</a>) }
     }
 
@@ -50,13 +52,19 @@ const PostDetail = ({ post }) => {
           {modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}
         </p>;
 
+      case "block-quote":
+        const leftQuote = <div className="inline-block mr-2"><Image src="/left-quote.png" height="30px" width="30px" alt="left-quote" /></div>
+        return <div key={`quote-${index}`} className="mb-6 pl-3 pr-3 text-justify border border-red-500 rounded-md lg:rounded-lg py-3">
+          {modifiedText.map((item, i) => <React.Fragment key={i}>{leftQuote}{item}</React.Fragment>)}
+        </div>
+
       case 'image':
         return (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} />);
 
       case 'code-block':
         let a = modifiedText[0].replace(/ /g, '&nbsp;');
         modifiedText = a.replace(/\n/g, '<br />');
-        return <div key={index} className="bg-gray-900 px-2 py-1 mb-6 rounded-md font-mono">
+        return <div key={index} className="bg-gray-900 px-2 py-1 mb-6 rounded-md lg:rounded-lg font-mono">
           <div style={{ wordWrap: 'break-word', width: '100%' }} dangerouslySetInnerHTML={{ __html: modifiedText }} />
         </div>;
 
@@ -97,9 +105,9 @@ const PostDetail = ({ post }) => {
 
   return (
     <>
-      <div className="bg-gray-700 shadow-lg rounded-md pb-2 mb-8">
+      <div className="bg-gray-700 shadow-lg rounded-md lg:rounded-lg  pb-2 mb-8">
         <div className="relative overflow-hidden shadow-md mb-6">
-          <img src={post.featuredImage.url} alt={post.title} className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-md" />
+          <img src={post.featuredImage.url} alt={post.title} className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-md lg:rounded-lg" />
         </div>
         <div className="px-3 sm:px-6 lg:px-8">
           <PostMeta post={post} />
