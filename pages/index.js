@@ -18,6 +18,12 @@ export default function Home({ posts }) {
 
         <meta name="twitter:title" content="Home | Cubicle" />
         <meta name="twitter:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
+
+        <link rel="apple-touch-icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <meta name="image" content="https://cubicle.vercel.app/favicon.ico" />
+        <meta name="og:image" content="https://cubicle.vercel.app/favicon.ico" />
+        <meta name="twitter:image" content="https://cubicle.vercel.app/favicon.ico" />
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-8 col-span-1">

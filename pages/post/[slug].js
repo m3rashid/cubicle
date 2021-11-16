@@ -27,6 +27,10 @@ const PostDetails = ({ post }) => {
           <meta name="og:url" content={"https://cubicle.vercel.app/post/" + post.slug} />
           <meta name="twitter:title" content={post.title + ' | Cubicle'} />
           <meta name="twitter:description" content={post.excerpt} />
+
+          <meta name="image" content={post.featuredImage.url} />
+          <meta name="og:image" content={post.featuredImage.url} />
+          <meta name="twitter:image" content={post.featuredImage.url} />
         </Head>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="col-span-1 lg:col-span-8">

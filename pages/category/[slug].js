@@ -24,6 +24,10 @@ const CategoryPost = ({ posts }) => {
 
         <meta name="twitter:title" content={router.query.slug + ' Category | Cubicle'} />
         <meta name="twitter:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
+
+        <meta name="image" content="https://cubicle.vercel.app/favicon.ico" />
+        <meta name="og:image" content="https://cubicle.vercel.app/favicon.ico" />
+        <meta name="twitter:image" content="https://cubicle.vercel.app/favicon.ico" />
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="col-span-1 lg:col-span-8">
