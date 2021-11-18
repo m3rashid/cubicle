@@ -65,9 +65,9 @@ const PostDetail = ({ post }) => {
         let a = modifiedText[0].replace(/ /g, '&nbsp;');
         modifiedText = a.replace(/\n/g, '<br />');
         return <div key={index} className="bg-gray-900 px-2 py-1 mb-6 rounded-md lg:rounded-lg font-mono">
-          <div style={{ wordWrap: 'break-word', width: '100%' }} dangerouslySetInnerHTML={{ __html: modifiedText }} />
+          <div className="overflow-x-auto scrollbarStyle pt-2 pb-3" dangerouslySetInnerHTML={{ __html: modifiedText }} />
         </div>;
-
+        
       case 'bulleted-list':
         let data1 = obj.children.map((child1, i) => {
           return child1.children.map((child2, j) => {
