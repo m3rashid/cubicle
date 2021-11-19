@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
   const posts = await getCategoryPost(params.slug);
 
   return {
-    props: { posts: posts, revalidate: 20 },
+    props: { posts }, revalidate: 20,
   };
 }
 
