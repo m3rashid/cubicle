@@ -4,7 +4,7 @@ import moment from 'moment';
 const PostMeta = ({ post }) => {
     return (
         <div>
-            <div className="flex sm:flex-row flex-col items-center justify-center mb-4 md:mb-8 w-full">
+            <div className="flex flex-col items-center justify-center mb-4 w-full">
                 <div className="flex items-center justify-center lg:mb-0 lg:w-auto mr-8 items-center ml-4 pb-1 pt-1">
                     <img
                         alt={post.author.name} height="30px" width="30px" className="align-middle rounded-full"

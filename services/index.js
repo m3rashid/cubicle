@@ -7,7 +7,7 @@ export const getPosts = async () => {
     query MyQuery {
       postsConnection(
         orderBy: updatedAt_DESC, 
-        first: 5
+        first: 6
       ) {
         edges {
           cursor

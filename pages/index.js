@@ -1,4 +1,4 @@
-import { FeaturedPosts } from '../sections/index';
+import { FeaturedPosts, Intro } from '../sections/index';
 import { PostCard, Categories, PostWidget } from '../components';
 import { getPosts } from '../services';
 import Head from 'next/head';
@@ -6,6 +6,7 @@ import Head from 'next/head';
 export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-3 sm:px-6 lg:px-12 mb-8">
+      <Intro/>
       <FeaturedPosts />
       <Head>
         <title>Home | Cubicle</title>
@@ -27,11 +28,13 @@ export default function Home({ posts }) {
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-8 col-span-1">
-          {posts.map((post, index) => (
-            <PostCard key={index} post={post.node} />
-          ))}
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
+            {posts.map((post, index) => (
+              <PostCard key={index} post={post.node} />
+            ))}
+          </div>
         </div>
-        <div className="lg:col-span-4 col-span-1">
+        <div className="col-span-1 lg:col-span-4">
           <div className="lg:sticky relative top-8">
             <PostWidget />
             <Categories />
@@ -42,7 +45,7 @@ export default function Home({ posts }) {
   );
 }
 
-// Fetch data at build time
+// Fetch data at build time and revalidate after atmost 20s
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
   return {

@@ -4,9 +4,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      gridTemplateColumns: {
-        '3': '1fr 1fr 1fr'
-      }
+
     },
   },
   variants: {
