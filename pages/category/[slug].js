@@ -31,9 +31,11 @@ const CategoryPost = ({ posts }) => {
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="col-span-1 lg:col-span-8">
-          {posts.map((post, index) => (
-            <PostCard key={index} post={post.node} />
-          ))}
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
+            {posts.map((post, index) => (
+              <PostCard key={index} post={post.node} />
+            ))}
+          </div>
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
