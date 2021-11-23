@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { getCategories, getCategoryPost } from '../../services';
 import { PostCard, Categories, Loader } from '../../components';
 
-const CategoryPost = ({ posts }) => {
+const CategoryPost = ({ posts, category }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -14,21 +14,22 @@ const CategoryPost = ({ posts }) => {
   return (
     <div className="container mx-auto px-3 sm:px-6 lg:px-12 mb-8">
       <Head>
-        <title>{router.query.slug} Category | Cubicle</title>
+        <title>{category} | Cubicle</title>
         <meta name="description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
         <meta name="keywords" content="programming, coding, life, web development, coder, programmer, new skills, latest, technology, computer, science, nerdy, nerd" />
 
-        <meta name="og:title" content={router.query.slug + ' Category | Cubicle'} />
+        <meta name="og:title" content={category + ' | Cubicle'} />
         <meta name="og:url" content={"https://cubicle.vercel.app/category/" + router.query.slug} />
         <meta name="og:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
 
-        <meta name="twitter:title" content={router.query.slug + ' Category | Cubicle'} />
+        <meta name="twitter:title" content={category + ' | Cubicle'} />
         <meta name="twitter:description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
 
         <meta name="image" content="https://cubicle.vercel.app/favicon.ico" />
         <meta name="og:image" content="https://cubicle.vercel.app/favicon.ico" />
         <meta name="twitter:image" content="https://cubicle.vercel.app/favicon.ico" />
       </Head>
+      <h1 className="mb-8 font-bold text-3xl text-center pb-4 border-b border-red-500 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">Category : &nbsp; {category} </h1>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="col-span-1 lg:col-span-8">
           <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
@@ -50,9 +51,9 @@ export default CategoryPost;
 
 export async function getStaticProps({ params }) {
   const posts = await getCategoryPost(params.slug);
-
+  const category = posts[0].node.categories[0].name;
   return {
-    props: { posts }, revalidate: 20,
+    props: { posts, category }, revalidate: 20,
   };
 }
 

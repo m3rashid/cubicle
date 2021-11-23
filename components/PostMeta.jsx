@@ -6,10 +6,8 @@ const PostMeta = ({ post }) => {
         <div>
             <div className="flex flex-col items-center justify-center mb-4 w-full">
                 <div className="flex items-center justify-center lg:mb-0 lg:w-auto mr-8 items-center ml-4 pb-1 pt-1">
-                    <img
-                        alt={post.author.name} height="30px" width="30px" className="align-middle rounded-full"
-                        src={post.author.photo.url}
-                    />
+                    <img alt={post.author.name} height="30px" width="30px" className="align-middle rounded-full"
+                        src={post.author.photo.url} />
                     <p className="inline align-middle text-white ml-2 font-medium text-lg">{post.author.name}</p>
                 </div>
                 <div className="font-medium text-white pb-1 pt-1">
