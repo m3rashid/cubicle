@@ -10,13 +10,16 @@ const CategoryPost = ({ posts, category }) => {
   if (router.isFallback) {
     return <Loader />;
   }
-
+  const keywords = category.split(' ');
+  keywords.push(router.query.slug)
+  const result = keywords.filter(word => word.length > 3);
+  
   return (
     <div className="container mx-auto px-3 sm:px-6 lg:px-12 mb-8">
       <Head>
         <title>{category} | Cubicle</title>
         <meta name="description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
-        <meta name="keywords" content="programming, coding, life, web development, coder, programmer, new skills, latest, technology, computer, science, nerdy, nerd" />
+        <meta name="keywords" content={result.join(', ')} />
 
         <meta name="og:title" content={category + ' | Cubicle'} />
         <meta name="og:url" content={"https://cubicle.vercel.app/category/" + router.query.slug} />

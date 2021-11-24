@@ -11,7 +11,7 @@ export default function Home({ posts }) {
       <Head>
         <title>Home | Cubicle</title>
         <meta name="description" content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials" />
-        <meta name="keywords" content="programming, coding, life, web development, coder, programmer, new skills, latest, technology, computer, science, nerdy, nerd" />
+        <meta name="keywords" content="cubicle, programming, coding, life, web development, coder, programmer, new skills, latest, technology, computer, science, nerdy, nerd" />
 
         <meta name="og:title" content="Home | Cubicle" />
         <meta name="og:url" content="https://cubicle.vercel.app/" />

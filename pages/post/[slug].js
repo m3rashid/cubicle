@@ -12,7 +12,7 @@ const PostDetails = ({ post }) => {
     return <Loader />;
   }
 
-  const keywords = post.excerpt.split(' ');
+  const keywords = post.title.split(' ');
   const result = keywords.filter(word => word.length > 3);
   return (
     <>
