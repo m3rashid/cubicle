@@ -12,7 +12,7 @@ const Header = () => {
         </div>
       </Link>
       <Link href="https://m3rashid.netlify.app/">
-        <a target="_blank" className="text-white cursor-pointer font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">Meet Dev</a>
+        <a target="_blank" className="cursor-pointer font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">Meet Dev</a>
       </Link>
     </div>
   );
