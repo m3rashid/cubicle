@@ -5,7 +5,7 @@ const PostMeta = ({ post }) => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center mb-4 w-full">
-        <div className="flex items-center justify-center lg:mb-0 lg:w-auto mr-8 items-center ml-4 pb-1 pt-1">
+        <div className="flex justify-center lg:mb-0 lg:w-auto mr-8 items-center ml-4 pb-1 pt-1">
           <img
             alt={post.author.name}
             height="30px"
@@ -20,7 +20,7 @@ const PostMeta = ({ post }) => {
         <div className="font-medium text-white pb-1 pt-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 inline mr-2 text-red-500"
+            className="h-6 w-6 inline mr-2 text-cyan-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

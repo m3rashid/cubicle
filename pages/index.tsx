@@ -23,7 +23,7 @@ const Home: React.FC<AllPosts> = ({ posts }) => {
       <Intro />
       <FeaturedPosts />
       <Head>
-        <title>{`Home | Cubicle`}</title>
+        <title>Home | Cubicle</title>
         <meta
           name="description"
           content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials"
@@ -46,16 +46,13 @@ const Home: React.FC<AllPosts> = ({ posts }) => {
           content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials"
         />
 
-        <link rel="apple-touch-icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta name="image" content="https://cubicle.vercel.app/favicon.ico" />
-        <meta
-          name="og:image"
-          content="https://cubicle.vercel.app/favicon.ico"
-        />
+        <link rel="apple-touch-icon" href="/fav.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
+        <meta name="image" content="https://cubicle.vercel.app/fav.png" />
+        <meta name="og:image" content="https://cubicle.vercel.app/fav.png" />
         <meta
           name="twitter:image"
-          content="https://cubicle.vercel.app/favicon.ico"
+          content="https://cubicle.vercel.app/fav.png"
         />
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

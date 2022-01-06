@@ -15,7 +15,7 @@ const AdjacentPostCard = ({ post, position }) => (
       <p className="text-white text-shadow font-semibold text-xs">
         {moment(post.createdAt).format("MMM DD, YYYY")}
       </p>
-      <p className="text-white font-semibold text-2xl text-center bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
+      <p className="text-white font-semibold text-2xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
         {post.title}
       </p>
     </div>
@@ -23,7 +23,7 @@ const AdjacentPostCard = ({ post, position }) => (
       <span className="z-10 cursor-pointer absolute w-full h-full" />
     </Link>
     {position === "LEFT" && (
-      <div className="absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-gradient-to-r from-red-500 to-yellow-500 left-4 rounded-full">
+      <div className="absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-gradient-to-r from-cyan-500 to-blue-500 left-4 rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6 text-white w-full mx-auto"
@@ -41,7 +41,7 @@ const AdjacentPostCard = ({ post, position }) => (
       </div>
     )}
     {position === "RIGHT" && (
-      <div className="absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-gradient-to-r from-red-500 to-yellow-500 right-4 rounded-full">
+      <div className="absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-gradient-to-r from-cyan-500 to-blue-500 right-4 rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6 text-white w-full mx-auto"

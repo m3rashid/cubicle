@@ -16,7 +16,7 @@ const FeaturedPostCard = ({ post }) => (
       <p className="text-white mb-3 text-shadow font-semibold text-xs">
         {moment(post.createdAt).format("MMM DD, YYYY")}
       </p>
-      <p className="mb-3 font-semibold text-xl text-center bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
+      <p className="mb-3 font-semibold text-xl text-center text-white">
         {post.title}
       </p>
       <div className="flex items-center justify-center mb-3 w-full">

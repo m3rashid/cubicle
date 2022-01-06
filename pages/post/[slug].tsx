@@ -12,8 +12,9 @@ import {
 } from "../../components";
 import { getPosts, getPostDetails } from "../../services";
 import { AdjacentPosts } from "../../sections";
+import { IPost } from "../../services/types";
 
-const PostDetails = ({ post }) => {
+const PostDetails = ({ post }: { post: IPost }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -21,7 +22,7 @@ const PostDetails = ({ post }) => {
   }
 
   const keywords = post.title.split(" ");
-  const result = keywords.filter((word) => word.length > 3);
+  const result = keywords.filter((word: string) => word.length > 4);
   return (
     <>
       <div className="container mx-auto px-3 sm:px-6 lg:px-12 mb-8">
@@ -68,7 +69,7 @@ const PostDetails = ({ post }) => {
 export default PostDetails;
 
 // Fetch data at build time
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { slug: string } }) {
   const data = await getPostDetails(params.slug);
   return {
     props: { post: data },
@@ -79,7 +80,9 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const posts = await getPosts();
   return {
-    paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
+    paths: posts.map(({ node: { slug } }: { node: { slug: string } }) => ({
+      params: { slug },
+    })),
     fallback: true,
   };
 }

@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
       setDataLoaded(true);
     });
   }, []);
-
+  // bg-gradient-to-r from-cyan-500 to-blue-500
   const ArrowFix = (arrowProps) => {
     const { carouselState, children, ...restArrowProps } = arrowProps;
     return <span {...restArrowProps}>{children}</span>;
@@ -43,7 +43,7 @@ const FeaturedPosts = () => {
   const arrowStyle = {
     backgroundClip: "text",
     color: "transparent",
-    background: "linear-gradient(to right, #EF4444, #F59E0B)",
+    background: "linear-gradient(to right, #06b6d4, #3b82f6)",
   };
 
   const leftArrow = (
@@ -73,7 +73,7 @@ const FeaturedPosts = () => {
   const rightArrow = (
     <ArrowFix>
       <div
-        className="absolute right-0 text-center py-3 px-3 cursor-pointer bg-red-500 rounded-full"
+        className="absolute right-0 text-center py-3 px-3 cursor-pointer bg-cyan-500 rounded-full"
         style={arrowStyle}
       >
         <svg
@@ -96,7 +96,7 @@ const FeaturedPosts = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500 mb-4 px-3">
+      <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 mb-4 px-3">
         Featured Posts
       </h2>
       <Carousel

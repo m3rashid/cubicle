@@ -29,7 +29,7 @@ const PostDetail = ({ post }) => {
       if (obj.type === "link") {
         modifiedText = (
           <a
-            className="text-red-500"
+            className="text-cyan-500"
             target="_blank"
             rel="noopener noreferrer"
             href={obj.href}
@@ -119,7 +119,7 @@ const PostDetail = ({ post }) => {
         return (
           <div
             key={`quote-${index}`}
-            className="mb-6 pl-3 pr-3 text-justify border border-red-500 rounded-md lg:rounded-lg py-3"
+            className="mb-6 pl-3 pr-3 text-justify border border-cyan-500 rounded-md lg:rounded-lg py-3"
           >
             {leftQuote}
             {modifiedText.map((item, i) => (
@@ -213,7 +213,7 @@ const PostDetail = ({ post }) => {
         </div>
         <div className="px-3 sm:px-6 lg:px-8">
           <PostMeta post={post} />
-          <h1 className="mb-8 text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
+          <h1 className="mb-8 text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
             {post.title}
           </h1>
           <div className="text-white">

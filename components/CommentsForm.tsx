@@ -41,9 +41,9 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-red-500 to-yellow-500 p-1 mb-8 shadow-lg rounded-md lg:rounded-lg">
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-1 mb-8 shadow-lg rounded-md lg:rounded-lg">
       <div className="bg-gray-700 shadow-lg rounded-md lg:rounded-lg p-3 sm:p-6 lg:p-8">
-        <h3 className="text-2xl mb-8 font-semibold border-b border-red-500 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
+        <h3 className="text-2xl mb-8 font-semibold border-b border-cyan-500 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
           Leave a Reply
         </h3>
         <div className="grid grid-cols-1 gap-4 mb-4">
@@ -89,13 +89,13 @@ const CommentsForm = ({ slug }) => {
           </div>
         </div>
         {error && (
-          <p className="text-s text-red-500">All fields are required</p>
+          <p className="text-s text-cyan-500">All fields are required</p>
         )}
         <div className="mt-8">
           <button
             type="button"
             onClick={handleCommentSubmission}
-            className="text-lg font-semibold rounded-xl text-gray-700 px-4 py-2.5 cursor-pointer bg-gradient-to-r from-red-500 to-yellow-500"
+            className="text-lg font-semibold rounded-xl text-gray-700 px-4 py-2 cursor-pointer bg-gradient-to-r from-cyan-500 to-blue-500"
           >
             Post Comment
           </button>

@@ -52,17 +52,14 @@ const CategoryPost = ({
           name="twitter:description"
           content="Cubicle is a blog website which mainly focuses on the life of programmers in general. Also, includes programming tips, tricks and tutorials"
         />
-        <meta name="image" content="https://cubicle.vercel.app/favicon.ico" />
-        <meta
-          name="og:image"
-          content="https://cubicle.vercel.app/favicon.ico"
-        />
+        <meta name="image" content="https://cubicle.vercel.app/fav.png" />
+        <meta name="og:image" content="https://cubicle.vercel.app/fav.png" />
         <meta
           name="twitter:image"
-          content="https://cubicle.vercel.app/favicon.ico"
+          content="https://cubicle.vercel.app/fav.png"
         />
       </Head>
-      <h1 className="mb-8 font-bold text-3xl text-center pb-4 border-b border-red-500 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
+      <h1 className="mb-8 font-bold text-3xl text-center pb-4 border-b border-cyan-500 bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
         Category : &nbsp; {category}{" "}
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

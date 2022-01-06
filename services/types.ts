@@ -44,5 +44,5 @@ export interface IPost {
   categories: {
     name: string;
     slug: string;
-  };
+  }[];
 }

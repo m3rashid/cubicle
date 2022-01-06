@@ -4,13 +4,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 
+// bg-gradient-to-r from-cyan-500 to-blue-500
+//                  #06b6d4   to    #3b82f6
+
 @mixin themeScrollbar() {
   &::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;
   }
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(#ef4444, #f59e0b);
+    background: linear-gradient(#06b6d4, #3b82f6);
     border-radius: 0.5rem;
   }
   &::-webkit-scrollbar-track {

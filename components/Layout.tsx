@@ -20,8 +20,8 @@ const Layout: React.FC<PageProps> = ({ children }) => (
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@m3_rashid" />
 
-      <link rel="apple-touch-icon" href="/favicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="/fav.png" type="image/x-icon" />
+      <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
     </Head>
     <Header />
     {children}

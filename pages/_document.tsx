@@ -16,17 +16,17 @@ class MyDocument extends Document {
     return initialProps;
   }
 
-  // render(): React.ReactElement {
-  //   return (
-  //     <Html>
-  //       <Head></Head>
-  //       <body>
-  //         <Main />
-  //         <NextScript />
-  //       </body>
-  //     </Html>
-  //   );
-  // }
+  render(): React.ReactElement {
+    return (
+      <Html>
+        <Head></Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
 
 export default MyDocument;
