@@ -15,7 +15,7 @@ const CategoryPost = ({
   posts,
   category,
 }: {
-  posts: AllPosts;
+  posts: any;
   category: string;
 }) => {
   const router = useRouter();
@@ -23,8 +23,8 @@ const CategoryPost = ({
   if (router.isFallback) {
     return <Loader />;
   }
-  const keywords = category.split(" ");
-  keywords.push(router.query.slug);
+  const keywords: string[] | undefined = category.split(" ");
+  keywords.push(router.query.slug as string);
   const result = keywords.filter((word) => word.length > 3);
 
   return (
@@ -65,7 +65,7 @@ const CategoryPost = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="col-span-1 lg:col-span-8">
           <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
-            {posts.map((post, index) => (
+            {posts.map((post: any, index: number) => (
               <PostCard key={index} post={post.node} />
             ))}
           </div>
@@ -79,9 +79,14 @@ const CategoryPost = ({
     </div>
   );
 };
+
 export default CategoryPost;
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
+interface ParamProps {
+  params: { slug: string };
+}
+
+export async function getStaticProps({ params }: ParamProps) {
   const posts = await getCategoryPost(params.slug);
   const category = posts[0].node.categories[0].name;
   return {

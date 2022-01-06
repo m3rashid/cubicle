@@ -50,7 +50,7 @@ const PostWidget: React.FC<IProps> = ({ categories, slug }) => {
               <p className="text-gray-200 font-xs">
                 {moment(post.createdAt).format("MMM DD, YYYY")}
               </p>
-              <Link href={`/post/${post.slug}`} className="text-md" key={index}>
+              <Link href={`/post/${post.slug}`} key={index}>
                 <span className="text-white cursor-pointer">{post.title}</span>
               </Link>
             </div>

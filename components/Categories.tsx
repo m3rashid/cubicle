@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
 import { getCategories } from "../services";
+import { ICategory } from "../services/types";
 
 const Categories = () => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<ICategory[]>([]);
 
   useEffect(() => {
     getCategories().then((newCategories) => {
@@ -18,7 +18,7 @@ const Categories = () => {
         <h3 className="text-2xl mb-4 font-semibold border-b border-cyan-500 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
           Categories
         </h3>
-        {categories.map((category, index) => (
+        {categories.map((category, index: number) => (
           <Link key={category.slug} href={`/category/${category.slug}`}>
             <p className="pb-3 mb-1 text-white cursor-pointer">
               {category.name}

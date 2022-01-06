@@ -1,6 +1,6 @@
 import React from "react";
 
-const Intro = () => {
+const Intro: React.FC = () => {
   return (
     <div className="mb-8">
       <h1 className="text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 mb-4">

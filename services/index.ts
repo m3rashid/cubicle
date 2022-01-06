@@ -112,7 +112,10 @@ export const getSimilarPosts = async (categories: string[], slug: string) => {
   return result.posts;
 };
 
-export const getAdjacentPosts = async (createdAt: Date, slug: string) => {
+export const getAdjacentPosts = async (
+  createdAt: string | Date,
+  slug: string
+) => {
   const query = gql`
     query GetAdjacentPosts($createdAt: DateTime!, $slug: String!) {
       next: posts(

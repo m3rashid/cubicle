@@ -2,8 +2,9 @@ import React from "react";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+import { IPost } from "../services/types";
 
-const FeaturedPostCard = ({ post }) => (
+const FeaturedPostCard = ({ post }: { post: IPost }) => (
   <div className="relative h-72">
     <div
       className="absolute rounded-md lg:rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72 opacity-40"

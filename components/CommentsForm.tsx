@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { submitComment } from "../services";
 
-const CommentsForm = ({ slug }) => {
+const CommentsForm = ({ slug }: { slug: string }) => {
   const [error, setError] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const commentEl = useRef<HTMLTextAreaElement>(null);
-  const nameEl = useRef<HTMLInputElement>(null);
-  const emailEl = useRef<HTMLInputElement>(null);
-  const storeDataEl = useRef<HTMLInputElement>(null);
+  const commentEl = useRef<HTMLTextAreaElement | any>(null);
+  const nameEl = useRef<HTMLInputElement | any>(null);
+  const emailEl = useRef<HTMLInputElement | any>(null);
+  const storeDataEl = useRef<HTMLInputElement | any>(null);
 
   useEffect(() => {
     nameEl.current.value = window.localStorage.getItem("name");

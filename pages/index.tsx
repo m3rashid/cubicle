@@ -2,7 +2,7 @@ import { FeaturedPosts, Intro } from "../sections/index";
 import { PostCard, Categories, PostWidget } from "../components";
 import { getPosts } from "../services";
 import Head from "next/head";
-import { IPost } from "../services/types";
+import { IPost, SinglePost } from "../services/types";
 import React from "react";
 
 interface AllPosts {
@@ -11,13 +11,7 @@ interface AllPosts {
   }[];
 }
 
-interface SinglePost extends IPost {
-  value: {
-    node: IPost;
-  };
-}
-
-const Home: React.FC<AllPosts> = ({ posts }) => {
+const Home: React.FC<any> = ({ posts }) => {
   return (
     <div className="container mx-auto px-3 sm:px-6 lg:px-12 mb-8">
       <Intro />

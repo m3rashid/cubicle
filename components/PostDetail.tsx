@@ -2,8 +2,13 @@ import React from "react";
 import Image from "next/image";
 import PostMeta from "./PostMeta";
 
-const PostDetail = ({ post }) => {
-  const getContentFragment = (index, text, obj, type) => {
+const PostDetail = ({ post }: any) => {
+  const getContentFragment = (
+    index?: any,
+    text?: any,
+    obj?: any,
+    type?: any
+  ) => {
     let modifiedText = text;
 
     if (obj) {
@@ -45,7 +50,7 @@ const PostDetail = ({ post }) => {
       case "heading-one":
         return (
           <h1 key={index} className="text-2xl font-semibold mb-4">
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h1>
@@ -54,7 +59,7 @@ const PostDetail = ({ post }) => {
       case "heading-two":
         return (
           <h2 key={index} className="text-2xl font-semibold mb-4">
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h2>
@@ -63,7 +68,7 @@ const PostDetail = ({ post }) => {
       case "heading-three":
         return (
           <h3 key={index} className="text-xl font-semibold mb-3">
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h3>
@@ -72,7 +77,7 @@ const PostDetail = ({ post }) => {
       case "heading-four":
         return (
           <h4 key={index} className="text-xl font-semibold mb-3">
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h4>
@@ -81,7 +86,7 @@ const PostDetail = ({ post }) => {
       case "heading-five":
         return (
           <h5 key={index} className="text-md font-semibold mb-2">
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h5>
@@ -90,7 +95,7 @@ const PostDetail = ({ post }) => {
       case "heading-six":
         return (
           <h6 key={index} className="text-md font-semibold mb-2">
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h6>
@@ -99,7 +104,7 @@ const PostDetail = ({ post }) => {
       case "paragraph":
         return (
           <p key={index} className="mb-6">
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </p>
@@ -122,7 +127,7 @@ const PostDetail = ({ post }) => {
             className="mb-6 pl-3 pr-3 text-justify border border-cyan-500 rounded-md lg:rounded-lg py-3"
           >
             {leftQuote}
-            {modifiedText.map((item, i) => (
+            {modifiedText.map((item: any, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </div>
@@ -155,13 +160,13 @@ const PostDetail = ({ post }) => {
         );
 
       case "bulleted-list":
-        let data1 = obj.children.map((child1, i) => {
-          return child1.children.map((child2, j) => {
+        let data1 = obj.children.map((child1: any, i: number) => {
+          return child1.children.map((child2: any, j: number) => {
             return (
               <li className="mb-2 flex" key={`${i}-${j}`}>
                 <div className="mr-2">○</div>
                 <div>
-                  {child2.children.map((child3, k) => {
+                  {child2.children.map((child3: any, k: number) => {
                     return getContentFragment(k, child3.text, child3);
                   })}
                 </div>
@@ -176,13 +181,13 @@ const PostDetail = ({ post }) => {
         );
 
       case "numbered-list":
-        let data2 = obj.children.map((child1, i) => {
-          return child1.children.map((child2, j) => {
+        let data2 = obj.children.map((child1: any, i: number) => {
+          return child1.children.map((child2: any, j: number) => {
             return (
               <li className="mb-2 flex" key={`${i}-${j}`}>
                 <div className="mr-2">{i + 1}.</div>
                 <div>
-                  {child2.children.map((child3, k) => {
+                  {child2.children.map((child3: any, k: number) => {
                     return getContentFragment(k, child3.text, child3);
                   })}
                 </div>
@@ -217,9 +222,10 @@ const PostDetail = ({ post }) => {
             {post.title}
           </h1>
           <div className="text-white">
-            {post.content.raw.children.map((typeObj, index) => {
-              const children = typeObj.children.map((item, itemindex) =>
-                getContentFragment(itemindex, item.text, item)
+            {post.content.raw.children.map((typeObj: any, index: number) => {
+              const children = typeObj.children.map(
+                (item: any, itemindex: number) =>
+                  getContentFragment(itemindex, item.text, item)
               );
 
               return getContentFragment(index, children, typeObj, typeObj.type);

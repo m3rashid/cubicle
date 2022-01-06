@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import PostMeta from "./PostMeta";
+import { IPost } from "../services/types";
 
-const PostCard = ({ post }) => (
+const PostCard = ({ post }: { post: IPost }) => (
   <div className="bg-gray-700 shadow-lg rounded-md lg:rounded-lg p-0">
     <div className="relative overflow-hidden pb-80 mb-6">
       <img
@@ -11,7 +12,7 @@ const PostCard = ({ post }) => (
         className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
       />
       <div className="mb-2 font-bold text-white absolute bottom-2 right-2">
-        {post.categories.map((cat) => {
+        {post.categories.map((cat: any) => {
           return (
             <span
               className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-md p-1 mr-1"

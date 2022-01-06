@@ -4,8 +4,8 @@ import parse from "html-react-parser";
 
 import { getComments } from "../services";
 
-const Comments = ({ slug }) => {
-  const [comments, setComments] = useState([]);
+const Comments = ({ slug }: { slug: string }) => {
+  const [comments, setComments] = useState<any[]>([]);
 
   useEffect(() => {
     getComments(slug).then((result) => {
@@ -21,7 +21,7 @@ const Comments = ({ slug }) => {
             <h3 className="text-2xl font-semibold pb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
               &nbsp;{comments.length} &nbsp; Comments
             </h3>
-            {comments.map((comment, index) => (
+            {comments.map((comment, index: number) => (
               <div key={index} className="border-t border-cyan-500 mb-2 pt-4">
                 <p className="mb-4">
                   <span className="font-semibold text-gray-100">

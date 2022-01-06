@@ -1,8 +1,15 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import { IPost } from "../services/types";
 
-const AdjacentPostCard = ({ post, position }) => (
+const AdjacentPostCard = ({
+  post,
+  position,
+}: {
+  post: IPost;
+  position: string;
+}) => (
   <>
     <div
       className="absolute rounded-md lg:rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72 opacity-40"

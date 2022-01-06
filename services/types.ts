@@ -25,15 +25,22 @@ export interface IGetPosts {
   };
 }
 
-export interface IPost {
-  author: {
-    bio: string;
-    name: string;
-    id: string;
-    photo: {
-      url: string;
-    };
+export interface IAuthor {
+  bio: string;
+  name: string;
+  id: string;
+  photo: {
+    url: string;
   };
+}
+
+export interface ICategory {
+  name: string;
+  slug: string;
+}
+
+export interface IPost {
+  author: IAuthor;
   createdAt: string;
   slug: string;
   title: string;
@@ -41,8 +48,9 @@ export interface IPost {
   featuredImage: {
     url: string;
   };
-  categories: {
-    name: string;
-    slug: string;
-  }[];
+  categories: ICategory[];
+}
+
+export interface SinglePost extends IPost {
+  node: IPost;
 }

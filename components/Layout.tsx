@@ -16,7 +16,7 @@ const Layout: React.FC<PageProps> = ({ children }) => (
       <meta name="robots" content="max-image-preview:large" />
       <meta name="handHeldFriendly" content="True" />
       <meta name="mobileOptimized" content="375" />
-      <meta name="canonical" href="https://cubicle.vercel.app" />
+      <link rel="canonical" href="https://cubicle.vercel.app" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@m3_rashid" />
 

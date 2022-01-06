@@ -1,7 +1,8 @@
 import React from "react";
 import moment from "moment";
+import { IPost } from "../services/types";
 
-const PostMeta = ({ post }) => {
+const PostMeta = ({ post }: { post: IPost }) => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center mb-4 w-full">

@@ -35,7 +35,7 @@ const FeaturedPosts = () => {
     });
   }, []);
   // bg-gradient-to-r from-cyan-500 to-blue-500
-  const ArrowFix = (arrowProps) => {
+  const ArrowFix = (arrowProps: any) => {
     const { carouselState, children, ...restArrowProps } = arrowProps;
     return <span {...restArrowProps}>{children}</span>;
   };
