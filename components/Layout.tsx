@@ -1,9 +1,13 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Head from 'next/head'
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Head from "next/head";
 
-const Layout = ({ children }) => (
+interface PageProps {
+  children: React.ReactNode | React.ReactNode[];
+}
+
+const Layout: React.FC<PageProps> = ({ children }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
